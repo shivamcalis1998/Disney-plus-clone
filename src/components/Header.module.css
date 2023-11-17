@@ -38,6 +38,10 @@
   position: relative;
   margin-right: auto;
   margin-left: 25px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .navMenuLink {
@@ -101,4 +105,8 @@
     background-color: #f9f9f9;
     border-color: transparent;
   }
+}
+
+.userImg {
+  height: 100%;
 }
