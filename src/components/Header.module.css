@@ -108,5 +108,37 @@
 }
 
 .userImg {
+  width: 100%;
   height: 100%;
+  border-radius: 50%;
+}
+
+.dropDown {
+  position: absolute;
+  top: 48px;
+  right: 0px;
+  background: rgb(19, 19, 19);
+  border: 1px solid rgb(151, 151, 151, 0.34);
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 50%) 0px 0px 18px 0;
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 3px;
+  width: 102px;
+  opacity: 0;
+}
+
+.signOut {
+  position: relative;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.signOut:hover .dropDown {
+  opacity: 1;
+  transition-duration: 1s;
 }

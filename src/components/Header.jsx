@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import {
   selectUserName,
   selectUserPhoto,
+  setSignOutState,
   setUserLoginDetails,
 } from "../features/user/userSlice";
 
@@ -32,14 +33,19 @@ const Header = (props) => {
     });
   }, [username]);
 
-  const handleAuth = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
+  const handleAuth = async () => {
+    try {
+      if (!username) {
+        const result = await signInWithPopup(auth, provider);
         setUser(result.user);
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
+      } else {
+        await auth.signOut();
+        dispatch(setSignOutState());
+        navigate("/");
+      }
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   const setUser = (user) => {
@@ -114,7 +120,12 @@ const Header = (props) => {
               <span>SERIES</span>
             </a>
           </div>
-          <img className={styles.userImg} src={userPhoto} alt={username} />
+          <div className={styles.signOut}>
+            <img className={styles.userImg} src={userPhoto} alt={username} />
+            <div className={styles.dropDown}>
+              <span onClick={handleAuth}>Sign Out</span>
+            </div>
+          </div>
         </>
       )}
       {/* <a onClick={handleAuth} className={styles.login}>
