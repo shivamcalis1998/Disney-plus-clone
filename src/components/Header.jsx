@@ -38,6 +38,7 @@ const Header = (props) => {
       if (!username) {
         const result = await signInWithPopup(auth, provider);
         setUser(result.user);
+        console.log(result);
       } else {
         await auth.signOut();
         dispatch(setSignOutState());

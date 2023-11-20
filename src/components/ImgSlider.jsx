@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import sliderScales1 from "../images/slider-scales.jpg";
 import sliderScales2 from "../images/slider-scale.jpg";
 import sliderScales3 from "../images/slider-badag.jpg";
-import sliderScales4 from "../images/slider-badging.jpg";
+import sliderScales5 from "../images/tdkhkbanner .jpg";
 
 const ImgSlider = (props) => {
   let settings = {
@@ -24,19 +24,22 @@ const ImgSlider = (props) => {
           <img src={sliderScales1} alt="" />
         </a>
       </Wrap>
+
       <Wrap>
         <a>
           <img src={sliderScales2} alt="" />
         </a>
       </Wrap>
+
       <Wrap>
         <a>
           <img src={sliderScales3} alt="" />
         </a>
       </Wrap>
+
       <Wrap>
         <a>
-          <img src={sliderScales4} alt="" />
+          <img src={sliderScales5} alt="" />
         </a>
       </Wrap>
     </Carousel>

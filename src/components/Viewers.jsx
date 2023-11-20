@@ -6,10 +6,11 @@ import pixar from "../images/viewers-pixar.png";
 import starwars from "../images/viewers-starwars.png";
 
 import disneyVid from "../videos/1564674844-disney.mp4";
-import marvelVid from "../videos/1564676115-marvel.mp4";
+// import marvelVid from "../videos/1564676115-marvel.mp4";
 import nationalVid from "../videos/1564676296-national-geographic.mp4";
 import pixarVid from "../videos/1564676714-pixar.mp4";
 import starwarsVid from "../videos/1608229455-star-wars.mp4";
+import test from "../videos/VID_20231120_182137.mp4";
 
 const Viewers = (props) => {
   return (
@@ -28,8 +29,8 @@ const Viewers = (props) => {
       </Wrap>
       <Wrap>
         <img src={marvel} alt="" />
-        <video autoPlay={true} loop={true} playsInline={true}>
-          <source src={marvelVid} type="video/mp4" />
+        <video autoPlay={true} loop={true} playsInline={true} muted={true}>
+          <source src={test} type="video/mp4" />
         </video>
       </Wrap>
       <Wrap>
@@ -86,10 +87,10 @@ const Wrap = styled.div`
   }
 
   video {
-    width: 100%;
-    height: 100%;
+    width: 130%;
+    height: 130%;
     position: absolute;
-    top: 0px;
+    top: -18px;
     opacity: 0;
     z-index: 0;
   }
